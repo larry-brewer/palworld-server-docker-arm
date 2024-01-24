@@ -1,6 +1,6 @@
 services:
    palworld:
-      image: thijsvanloef/palworld-server-docker:latest
+      image: palworld:dev # TODO Change me back!
       restart: unless-stopped
       container_name: palworld-server
       ports:
