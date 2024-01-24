@@ -19,6 +19,8 @@ printf "\e[0;32m*****STARTING INSTALL/UPDATE*****\e[0m\n"
         FEXBash="FEXBash"
         mkdir -p /home/steam/steamcmd/
         ls -latr
+        ls -latr /home/steam/
+        ls -latr /home/steam/Steam
         mv /home/steam/Steam/ /home/steam/steamcmd/
         chmod +x /home/steam/steamcmd/steamcmd.sh
     else
