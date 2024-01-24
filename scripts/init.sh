@@ -31,5 +31,9 @@ printf "\e[0;32m*****STARTING INSTALL/UPDATE*****\e[0m\n"
 fi
 
 read -p "Init completed???? debug now!" dummy
+# infinite loop because steamcmd isn't actually doing anything?!
+while true; do
+    sleep 60
+done
 
 ./start.sh
