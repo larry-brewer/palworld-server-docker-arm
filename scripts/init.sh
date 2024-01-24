@@ -4,6 +4,7 @@ set -xo pipefail
 
 if [[ ! "${PUID}" -eq 0 ]] && [[ ! "${PGID}" -eq 0 ]]; then
     printf "\e[0;32m*****EXECUTING USERMOD*****\e[0m\n"
+    # TODO why does this take a few minutes to run every time we launch a new container!?
     usermod -o -u "${PUID}" steam
     groupmod -o -g "${PGID}" steam
 else
