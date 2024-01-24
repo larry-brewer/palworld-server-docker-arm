@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# TODO Haven't tested this at all....
+
 STARTCOMMAND="./PalServer.sh"
 
 if [ -n "${PORT}" ]; then

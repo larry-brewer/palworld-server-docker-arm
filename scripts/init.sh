@@ -45,10 +45,5 @@ printf "\e[0;32m*****STARTING INSTALL/UPDATE*****\e[0m\n"
     su $USERNAME -c "${FEXBash} -c \"${steamcmd} +force_install_dir /palworld +login anonymous +app_update 2394010 validate +quit\""
 fi
 
-read -p "Init completed???? debug now!" dummy
-# TODO infinite loop because steamcmd isn't actually doing anything?!
-while true; do
-    sleep 60
-done
 
 ./start.sh
