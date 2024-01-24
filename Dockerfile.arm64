@@ -32,7 +32,7 @@ ENV PORT= \
 # on azure D2pls_v5 vm, CPU_MHZ must be set?
 ENV CPU_MHZ=1000
 
-RUN mv /home/steam/Steam /usr/bin/
+#RUN mv /home/steam/Steam /usr/bin/
 
 
 COPY ./scripts/* /home/steam/server/

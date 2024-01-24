@@ -14,7 +14,7 @@ if [[ ! "${PUID}" -eq 0 ]] && [[ ! "${PGID}" -eq 0 ]]; then
     else
         USERNAME="steam"
     fi
-    
+
     # TODO sort out fex already being uid 1000...
     if [[ "$is_arm" == "false" ]]; then
         # TODO why does this take a few minutes to run every time we launch a new container!?
@@ -33,8 +33,8 @@ if [ "${UPDATE_ON_BOOT}" = true ]; then
 printf "\e[0;32m*****STARTING INSTALL/UPDATE*****\e[0m\n"
     if [ "$is_arm" == "true" ]; then # if this an ARM kernel "aarch64", use FEXBash
         FEXBash="FEXBash"
-        ls -latr /usr/bin/Steam/
-        steamcmd="/usr/bin/Steam/steamcmd.sh"
+        ls -latr /home/steam/Steam/
+        steamcmd="/home/steam/Steam/steamcmd.sh"
     else
         FEXBash=""
         steamcmd="/home/steam/steamcmd/steamcmd.sh"
