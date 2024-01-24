@@ -13,6 +13,8 @@ fi
 mkdir -p /palworld
 chown -R steam:steam /palworld
 
+uname -a
+
 if [ "${UPDATE_ON_BOOT}" = true ]; then
 printf "\e[0;32m*****STARTING INSTALL/UPDATE*****\e[0m\n"
     if [ "$(uname -a | grep arm)" != "" ]; then # if this an ARM box, use FEXBash
