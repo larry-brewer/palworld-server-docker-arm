@@ -21,7 +21,9 @@ printf "\e[0;32m*****STARTING INSTALL/UPDATE*****\e[0m\n"
         ls -latr
         ls -latr /home/steam/
         ls -latr /home/steam/Steam
+        ls -latr /usr/bin/steamcmd/
         mv /home/steam/Steam/ /home/steam/steamcmd/
+        
         chmod +x /home/steam/steamcmd/steamcmd.sh
     else
         FEXBash=""
