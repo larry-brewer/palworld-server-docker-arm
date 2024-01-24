@@ -18,6 +18,7 @@ printf "\e[0;32m*****STARTING INSTALL/UPDATE*****\e[0m\n"
     if [ "$(uname -a | grep aarch64)" != "" ]; then # if this an ARM kernel "aarch64", use FEXBash
         FEXBash="FEXBash"
         mkdir -p /home/steam/steamcmd/
+        ls -latr
         mv /home/steam/Steam/ /home/steam/steamcmd/
         chmod +x /home/steam/steamcmd/steamcmd.sh
     else
