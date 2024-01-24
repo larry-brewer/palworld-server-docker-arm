@@ -1,5 +1,6 @@
 #!/bin/bash
-set -xeo pipefail
+#set -e
+set -xo pipefail
 
 if [[ ! "${PUID}" -eq 0 ]] && [[ ! "${PGID}" -eq 0 ]]; then
     printf "\e[0;32m*****EXECUTING USERMOD*****\e[0m\n"
@@ -28,5 +29,7 @@ printf "\e[0;32m*****STARTING INSTALL/UPDATE*****\e[0m\n"
     
     ${FEXBash} su steam -c "${steamcmd} +force_install_dir '/palworld' +login anonymous +app_update 2394010 validate +quit"
 fi
+
+read -p "Init completed???? debug now!" dummy
 
 ./start.sh
