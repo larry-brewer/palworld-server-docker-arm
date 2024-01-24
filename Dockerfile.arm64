@@ -1,6 +1,7 @@
 FROM teriyakigod/steamcmd:arm64@sha256:30bb78b0e3c82daee363aee53777ae2b981face928d474730d6a03feadcbefc2
 
 LABEL maintainer="thijs@loef.dev"
+USER root
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     xdg-user-dirs=0.17-2 \
