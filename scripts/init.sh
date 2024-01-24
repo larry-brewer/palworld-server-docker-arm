@@ -10,7 +10,7 @@ fi
 if [[ ! "${PUID}" -eq 0 ]] && [[ ! "${PGID}" -eq 0 ]]; then
     printf "\e[0;32m*****EXECUTING USERMOD*****\e[0m\n"
     if [[ "$is_arm" == "true" ]]; then
-        USERNAME="fex"
+        USERNAME="steam" # or fex....
     else
         USERNAME="steam"
     fi
