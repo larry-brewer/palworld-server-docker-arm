@@ -17,6 +17,8 @@ if [ "${UPDATE_ON_BOOT}" = true ]; then
 printf "\e[0;32m*****STARTING INSTALL/UPDATE*****\e[0m\n"
     if [ "$(uname -a | grep arm)" != "" ]; then # if this an ARM box, use FEXBash
         FEXBash="FEXBash"
+        mkdir -p /home/steam/steamcmd/
+        mv /home/steam/Steam/ /home/steam/steamcmd/
         chmod +x /home/steam/steamcmd/steamcmd.sh
     else
         FEXBash=""
