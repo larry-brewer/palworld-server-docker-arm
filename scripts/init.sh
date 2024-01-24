@@ -17,19 +17,16 @@ if [ "${UPDATE_ON_BOOT}" = true ]; then
 printf "\e[0;32m*****STARTING INSTALL/UPDATE*****\e[0m\n"
     if [ "$(uname -a | grep aarch64)" != "" ]; then # if this an ARM kernel "aarch64", use FEXBash
         FEXBash="FEXBash"
-        mkdir -p /home/steam/steamcmd/
-        ls -latr
-        ls -latr /home/steam/
-        ls -latr /home/steam/Steam
-        ls -latr /usr/bin/steamcmd/
-        mv /home/steam/Steam/ /home/steam/steamcmd/
-        
-        chmod +x /home/steam/steamcmd/steamcmd.sh
+        ls -latr /usr/bin/Steam/
+        steamcmd="/usr/bin/Steam/steamcmd.sh"
     else
         FEXBash=""
+        steamcmd="/home/steam/steamcmd/steamcmd.sh"
     fi
+
+    chmod +x $steamcmd
     
-    ${FEXBash} su steam -c '/home/steam/steamcmd/steamcmd.sh +force_install_dir "/palworld" +login anonymous +app_update 2394010 validate +quit'
+    ${FEXBash} su steam -c "${steamcmd} +force_install_dir '/palworld' +login anonymous +app_update 2394010 validate +quit"
 fi
 
 ./start.sh

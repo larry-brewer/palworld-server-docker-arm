@@ -36,7 +36,7 @@ ENV CPU_MHZ=1000
 # https://github.com/TeriyakiGod/steamcmd-docker-arm64/blob/main/Dockerfile 
 # That link says /home/steam/Steam should be the place where steamcmd.sh and dependencies live.
 
-RUN mkdir -p /usr/bin/steamcmd && mv /home/steam/Steam /usr/bin/steamcmd/
+RUN mv /home/steam/Steam /usr/bin/
 
 # Does that work ^ ?
 
