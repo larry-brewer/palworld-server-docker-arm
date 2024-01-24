@@ -27,7 +27,7 @@ printf "\e[0;32m*****STARTING INSTALL/UPDATE*****\e[0m\n"
 
     chmod +x $steamcmd
     
-    ${FEXBash} su steam -c "${steamcmd} +force_install_dir '/palworld' +login anonymous +app_update 2394010 validate +quit"
+    ${FEXBash} su steam -c "${steamcmd} +force_install_dir /palworld +login anonymous +app_update 2394010 validate +quit"
 fi
 
 read -p "Init completed???? debug now!" dummy
