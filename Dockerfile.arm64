@@ -32,13 +32,8 @@ ENV PORT= \
 # on azure D2pls_v5 vm, CPU_MHZ must be set?
 ENV CPU_MHZ=1000
 
-# TODO: Investigate why steamcmd is gone at runtime
-# https://github.com/TeriyakiGod/steamcmd-docker-arm64/blob/main/Dockerfile 
-# That link says /home/steam/Steam should be the place where steamcmd.sh and dependencies live.
-
 RUN mv /home/steam/Steam /usr/bin/
 
-# Does that work ^ ?
 
 COPY ./scripts/* /home/steam/server/
 RUN chmod +x /home/steam/server/init.sh /home/steam/server/start.sh
