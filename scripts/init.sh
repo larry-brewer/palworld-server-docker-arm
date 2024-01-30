@@ -46,4 +46,22 @@ printf "\e[0;32m*****STARTING INSTALL/UPDATE*****\e[0m\n"
 fi
 
 
-./start.sh
+mkdir -p /palworld/backups
+chown -R steam:steam /palworld /home/steam/
+
+term_handler() {
+    if [ "${RCON_ENABLED}" = true ]; then
+        rcon-cli save
+        rcon-cli "shutdown 1"
+    else # Does not save
+        kill -SIGTERM "$(pidof PalServer-Linux-Test)"
+    fi
+    tail --pid=$killpid -f 2>/dev/null
+}
+
+trap 'term_handler' SIGTERM
+
+su steam -c ./start.sh &
+# Process ID of su
+killpid="$!"
+wait $killpid
